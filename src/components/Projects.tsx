@@ -52,10 +52,17 @@ const projectsData = [
   }
 ];
 
-const Projects: React.FC = () => {
-  const [selectedProject, setSelectedProject] = useState(null);
+interface Project {
+  title: string;
+  description: string;
+  longDescription: string;
+  link: string;
+}
 
-  const openModal = (project) => {
+const Projects: React.FC = () => {
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+
+  const openModal = (project: Project) => {
     setSelectedProject(project);
   };
 
